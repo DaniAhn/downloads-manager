@@ -28,6 +28,6 @@ Clear the desired folder by runnning:
 ```
 python downloads-manager.py clear <folder_name|All>
 ```
-The folder name is case-sensitive. The selected folder will be completely emptied into the recycle bin. If All is selected, the script will empty all of the folders in the organization structure.
+The folder name is case-sensitive. The selected folder will be completely emptied into the Recycle Bin. If All is selected, the script will empty all of the folders in the organization structure.
 ## Authors
 Daniel Ahn
