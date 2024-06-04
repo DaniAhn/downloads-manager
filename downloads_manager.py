@@ -29,12 +29,16 @@ def main() -> None:
     # Creates a list of command line arguments
     arg_list = sys.argv[1:]
     # Checks whether 'sort' or 'clear' options are selected
+    if len(arg_list) == 0:
+        exit()
     if arg_list[0] == 'sort':
         organize_files(downloads_path)
     elif arg_list[0] == 'clear':
         # Checks if the second argument is a valid option
         if arg_list[1] in FOLDERS.keys() or arg_list[1] == 'All':
             confirm_clear(downloads_path, arg_list[1])
+    else:
+        exit()
 
 def confirm_clear(downloads_path: str, option: str) -> None:
     """
@@ -102,7 +106,6 @@ def organize_files(downloads_path: str) -> None:
             continue
 
         is_sorted = False
-        print(file)
 
         # Inspects each folder if it contains a matching file extension
         for folder in FOLDERS.keys():
