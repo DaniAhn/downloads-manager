@@ -117,15 +117,24 @@ def organize_files(downloads_path: str) -> None:
                 if file_ext == ext:
                     # Moves file to corresponding folder
                     folder_path = os.path.join(downloads_path, folder)
-                    print(f'Moving {file} to {folder_path}')
-                    shutil.move(file_path, folder_path)
+                    # Skips file if it already exists in folder
+                    if not os.path.exists(folder_path, file):
+                        print(f'Moving {file} to {folder_path}')
+                        shutil.move(file_path, folder_path)
+                    else: 
+                        print(f'{file} already exists in {folder_path}, skipping...')
+
                     is_sorted = True
                     break
         # If no match is found, file is moved to "Other"
         if is_sorted == False:
             folder_path = os.path.join(downloads_path, 'Other')
-            print(f'Moving {file} to {folder_path}')
-            shutil.move(file_path, folder_path)
+            # Skips file if it already exists in folder
+            if not os.path.exists(folder_path, file):
+                print(f'Moving {file} to {folder_path}')
+                shutil.move(file_path, folder_path)
+            else: 
+                print(f'{file} already exists in {folder_path}, skipping...')
 
         print('\n')
 
