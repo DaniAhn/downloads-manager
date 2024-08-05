@@ -1,8 +1,9 @@
 # Downloads Manager
-This python script allows you to manage the files in your Downloads folder. It automatically creates a folder structure and has the option to sort your files based on their file extension. It also has the option to clear a specific folder by moving all contained files to the Recycle Bin, or to clear all folders in the organization structure.
+This python script allows you to manage the files in your Downloads folder. It automatically creates a folder structure to organize your files, and is able to sort your downloads based on their file extension. It also has the option to clear the contents of each folder by moving them to the Recycle Bin.
+
 ## Getting Started
-### Installing
-Install the required Python library by running:
+### Installation
+Install the required Python library by running the following command in the terminal window:
 ```
 pip install send2trash
 ```
@@ -16,9 +17,9 @@ This script creates the following organization structure, where files are sorted
 - Compressed: .7z, .zip, .rar, .arj, .pkg
 - Other: Files that do not match any of the above
 
-The above folder structure is automatically created the first time the program is run, and any missing folders will be replaced on subsequent executions. Directories are ignored and remain in the Downloads folder.
+The above folder structure is automatically created the first time the program is run, and any missing folders within the structure will be replaced on subsequent executions. Any folders that are not part of the structure are ignored and remain in the Downloads folder.
+
 ### Executing Program
-Navigate to the project directory in the terminal window.
 #### Sort Files
 Sort files in your Downloads folder by running:
 ```
@@ -27,8 +28,15 @@ python downloads-manager.py sort
 #### Clear Folders
 Clear the desired folder by runnning:
 ```
-python downloads-manager.py clear <folder_name|All>
+python downloads-manager.py clear <folder name>
 ```
-The folder name is case-sensitive. The selected folder will be completely emptied into the Recycle Bin. If All is selected, the script will empty all of the folders in the organization structure.
+The submitted folder will be completely emptied into the Recycle Bin. The folder name is case-sensitive.
+
+Alternatively, run the following command:
+```
+python downloads-manager.py clear All
+```
+Running this command will cause the script to empty all of the folders in the organization structure into the Recycle Bin.
+
 ## Authors
 Daniel Ahn
