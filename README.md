@@ -2,7 +2,7 @@
 This python script allows you to manage the files in your Downloads folder. It automatically creates a folder structure and has the option to sort your files based on their file extension. It also has the option to clear a specific folder by moving all contained files to the Recycle Bin, or to clear all folders in the organization structure.
 ## Getting Started
 ### Installing
-- Install the required Python library by running:
+Install the required Python library by running:
 ```
 pip install send2trash
 ```
@@ -18,6 +18,7 @@ This script creates the following organization structure, where files are sorted
 
 The above folder structure is automatically created the first time the program is run, and any missing folders will be replaced on subsequent executions. Directories are ignored and remain in the Downloads folder.
 ### Executing Program
+Navigate to the project directory in the terminal window.
 #### Sort Files
 Sort files in your Downloads folder by running:
 ```
